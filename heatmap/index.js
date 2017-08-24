@@ -12,6 +12,13 @@ ymaps.ready(['Heatmap']).then(function init() {
             data.push([obj[attr].coords[0], obj[attr].coords[1]]);
         }
     }
+    myMap.geoObjects
+        .add(new ymaps.Placemark([55.74681391473243, 37.60905924632876], {
+            balloonContent: 'Центр массы тепловой карты'
+        }, {
+            preset: 'islands#icon',
+            iconColor: '#0095b6'
+        }));
     var heatmap = new ymaps.Heatmap(data, {
         // Радиус влияния.
         radius: 15,
